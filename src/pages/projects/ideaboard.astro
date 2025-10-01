@@ -1,0 +1,91 @@
+---
+// Use the correct path based on your successful loading test
+import Layout from '../../layouts/Layout.astro'; 
+// You can remove this line if the Layout component correctly imports global CSS:
+import '../../styles/global.css'; 
+
+const TECH_STACK = [
+  "TypeScript", "React", "Tailwind CSS", "Socket.io", 
+  "Node.js", "Express", "MongoDB"
+];
+---
+
+<Layout title="IdeaBoard: Real-Time Whiteboard" fullWidth={true} isStickyHeader={false}>
+  <article class="mx-auto py-12 px-8 mb-5 dark:bg-gray-900 rounded-xl border border-gray-700 shadow-lg">
+    
+    <header class="mb-12 text-center border-b pb-8 border-gray-200 dark:border-gray-700 px-8">
+      <h1 class="text-5xl font-extrabold text-gray-900 dark:text-white mb-4 font-serif">
+        IdeaBoard: Real-Time Collaborative Whiteboard
+      </h1>
+
+      <p class="text-xl text-gray-600 dark:text-gray-400 italic">
+        A highly scalable, collaborative whiteboard platform built with WebSockets, Node.js, and MongoDB.
+      </p>
+
+      <div class="flex justify-center space-x-6 mt-4 text-lg font-medium">
+          <a href="YOUR_DEMO_LINK" target="_blank" class="text-primary hover:underline dark:text-accent">View Live Demo</a>
+          <a href="YOUR_REPO_LINK" target="_blank" class="text-primary hover:underline dark:text-accent">GitHub Repository</a>
+      </div>
+    </header>
+
+    <div class="my-10 rounded-xl shadow-2xl overflow-hidden border border-gray-200 dark:border-gray-700">
+        <iframe 
+            class="w-full aspect-video"
+            src="YOUR_EMBED_URL" 
+            title="IdeaBoard Video Demo" 
+            frameborder="0" 
+            allowfullscreen
+        ></iframe>
+    </div>
+
+        <div class="prose dark:prose-invert max-w-none mx-auto text-gray-800 dark:text-gray-200">
+        
+        <h2 class="text-3xl font-bold border-b pb-2 mb-4 text-primary dark:text-accent">
+            The Challenge
+        </h2>
+
+        <blockquote class="text-xl italic border-l-4 border-primary/70 pl-4 bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+            This project addresses the challenge of remote collaboration by providing a real-time, shared digital space for users to brainstorm and draw simultaneously.
+        </blockquote>
+
+        <hr class="my-8 border-gray-300 dark:border-gray-700" />
+
+        <h2 class="text-2xl font-bold mb-4">How I Approached Problem-Solving:</h2>
+        <p>Initially, I explored different real-time communication protocols and settled on <strong>WebSockets</strong> for their low-latency, bidirectional capabilities essential for instant drawing updates. For managing user interactions and drawing states, a robust frontend architecture was critical, leading me to use <strong>React</strong>.</p>
+        <p class="mt-2">The backend was designed with <strong>Node.js and Express</strong> to handle concurrent WebSocket connections and manage drawing data persistence efficiently. I prioritized scalability for concurrent users and implemented <strong>automated backend tests</strong> to ensure reliability of critical API endpoints.</p>
+
+        <hr class="my-8 border-gray-300 dark:border-gray-700" />
+
+                
+        <h2 class="font-bold text-2xl mb-4">Tech Stack & Decision Rationale</h2>
+        
+        <table class="w-full text-left border-collapse border-b border-gray-300 dark:border-gray-700">
+            <thead class="bg-gray-100 dark:bg-gray-800 border-t border-gray-300 dark:border-gray-700">
+                <tr class="bg-gray-100 dark:bg-gray-800 border-t border-gray-300 dark:border-gray-700">
+                    <th class="p-3 text-gray-900 dark:text-white font-bold w-1/4">Technology</th>
+                    <th class="p-3 text-gray-900 dark:text-white font-bold">Rationale (Decision Behind Each Tech Choice)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="border-t dark:border-gray-700"><td class="p-3 font-semibold">TypeScript</td><td class="p-3">Chosen for <strong>type-safety</strong>, crucial for developing complex, interactive UI components and ensuring data consistency across the real-time application. This reduced common runtime errors compared to plain JavaScript.</td></tr>
+                <tr class="border-t dark:border-gray-700"><td class="p-3 font-semibold">React</td><td class="p-3">Selected for its <strong>component-based architecture</strong>, which facilitated the creation of reusable UI elements (e.g., drawing tools, canvas) and efficient state management for a dynamic interface, offering better control over rendering performance.</td></tr>
+                <tr class="border-t dark:border-gray-700"><td class="p-3 font-semibold">Tailwind CSS</td><td class="p-3">Utilized for <strong>rapid UI development</strong> and responsive design. Its utility-first approach allowed for quick styling iterations and ensured the whiteboard adapted seamlessly across different screen sizes.</td></tr>
+                <tr class="border-t dark:border-gray-700"><td class="p-3 font-semibold">Socket.io</td><td class="p-3">Implemented specifically for <strong>real-time bidirectional communication</strong>. It provided robust features like room management and auto-reconnection, vital for enabling instant drawing updates and managing user permissions in a complex real-time environment.</td></tr>
+                <tr class="border-t dark:border-gray-700"><td class="p-3 font-semibold">Node.js & Express</td><td class="p-3">Chosen for the backend due to their <strong>non-blocking I/O model</strong>, making them highly efficient for handling numerous concurrent WebSocket connections. This was ideal for a real-time application needing scalable and performant server management.</td></tr>
+                <tr class="border-t dark:border-gray-700"><td class="p-3 font-semibold">MongoDB</td><td class="p-3">Integrated as the database solution for its <strong>flexibility and scalability</strong>, particularly suited for handling the dynamic and potentially unstructured nature of drawing data and user session information, allowing for quick schema evolution.</td></tr>
+            </tbody>
+        </table>
+
+        <hr class="my-8 border-gray-300 dark:border-gray-700" />
+
+        <h2 class="font-bold text-2xl mb-4">Outcome & Key Takeaways</h2>
+        <ul class="list-disc pl-6 space-y-2">
+            <li>Successfully delivered a <strong>fully functional MVP</strong> (Minimum Viable Product) capable of real-time drawing and synchronization.</li>
+            <li>Learned advanced concepts in <strong>WebSocket communication</strong> and state management in real-time applications.</li>
+            <li>Gained experience in <strong>architecting scalable backend services</strong> designed to handle concurrent user loads.</li>
+            <li>Enhanced skills in <strong>automated testing</strong> for API endpoints, ensuring system reliability and preventing regressions in critical features.</li>
+        </ul>
+
+    </div>
+  </article>
+</Layout>

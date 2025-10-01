@@ -5,12 +5,29 @@ import type { HeaderProps } from "@types";
 
 type Props = HeaderProps;
 
-const { siteLogo, navLinks } = Astro.props;
+interface Props {
+  siteLogo: { text: string; link: string };
+  navLinks: { name: string; href: string }[];
+  isStickyHeader: boolean; // Accept the new prop
+}
+
+const { siteLogo, navLinks, isStickyHeader } = Astro.props;
+
+const headerClasses = [
+    // 1. Base Layout/Container Classes (These should *always* be applied)
+    "mx-auto flex max-w-5xl justify-between px-5 py-6 w-full animate-slide-in", 
+    "bg-black", // Base background color
+
+    // 2. Conditional Sticky Classes
+    isStickyHeader ? "sticky top-0 z-50 bg-black/80 backdrop-blur-md" : "" 
+    
+    // NOTE: I removed py-5 from the conditional class list and added py-6 to the base list 
+    // to match your original HTML structure closely.
+];
+
 ---
 
-<header
-  class="sticky top-0 z-50 mx-auto flex max-w-5xl animate-slide-in justify-between bg-black px-5 py-6"
->
+<header class:list={headerClasses}>
   <a href="/" aria-label="Home link">
     <Image
       class="rounded-full"

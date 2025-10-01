@@ -5,6 +5,18 @@ import "@fontsource-variable/gabarito";
 import { SITE_CONFIG } from "@config";
 import Footer from "@components/Footer.astro";
 
+interface Props{
+  title: string;
+  fullWidth?: boolean;
+  isStickyHeader?: boolean;
+}
+
+const {
+  title: pageTitle, // Rename title to avoid conflict with imported SITE_CONFIG.title
+  fullWidth = false, // Set default to false
+  isStickyHeader = true,
+} = Astro.props
+
 const {
   title,
   description,
@@ -29,7 +41,7 @@ const ogImgUrl = canonicalURL + socialImage;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title>{pageTitle}</title>
 
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -43,8 +55,11 @@ const ogImgUrl = canonicalURL + socialImage;
     <meta property="twitter:image" content={ogImgUrl} />
   </head>
   <body class="bg-black font-sans">
-    <Header siteLogo={siteLogo} navLinks={navLinks} />
-    <main class="mx-auto max-w-3xl px-5">
+    <Header siteLogo={siteLogo} navLinks={navLinks} isStickyHeader={isStickyHeader}/>
+    <main class:list={[
+      "mx-auto px-5",
+      fullWidth ? "max-w-full" : "max-w-3xl"
+    ]}>
       <slot />
     </main>
     <Footer author={author} socialLinks={socialLinks} />
