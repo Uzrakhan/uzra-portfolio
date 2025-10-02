@@ -46,7 +46,7 @@ export const SITE_CONTENT: SiteContent = {
   ],
   about: {
     description: `
-      Hi, I’m Uzra Khan, a passionate and dedicated self-taught Fullstack Developer. I recently focused my learning on the modern web development stack, including **React/Next.js for the frontend** and **Node.js/Express for the backend**.
+      Hi, I’m Uzra Khan, a passionate and dedicated self-taught Fullstack Developer. I recently focused my learning on the modern web development stack, including React/Next.js for the frontend** and **Node.js/Express for the backend**.
 
       Although I don't have formal, paid work experience, I have channeled all my effort into building **real-world, hands-on projects** that demonstrate my ability to design, develop, and deploy fullstack applications.
 

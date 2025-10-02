@@ -1,0 +1,48 @@
+---
+// This component requires no props
+---
+
+<section id="learning-log" class="mx-auto max-w-5xl px-5 py-20">
+    <h2 class="text-4xl font-extrabold text-white mb-12 text-center">
+        Current Learning & Growth 🚀
+    </h2>
+    
+    {/* Main container for the learning block */}
+    <div class="max-w-3xl mx-auto p-8 bg-gray-900 rounded-xl border border-gray-700 shadow-xl space-y-8">
+        
+        {/* High-Level Focus */}
+        <h3 class="text-3xl font-extrabold text-white mb-6 border-b border-gray-700 pb-2 flex items-center space-x-3">
+             <span class="text-accent text-3xl">💡</span> <span>Deep Dive: Real-Time Systems Architecture</span>
+        </h3>
+
+        {/* === 1. NOW: The Focus (Accentuated Card) === */}
+        <div class="p-5 rounded-lg bg-gray-800 border border-accent/50 shadow-lg">
+            <div class="flex items-center space-x-3 mb-3">
+                {/* Visual marker */}
+                <span class="h-6 w-6 rounded-full bg-accent text-black text-xl font-bold flex items-center justify-center">1</span>
+                <h4 class="text-xl font-bold text-accent tracking-wide">
+                    CURRENT FOCUS
+                </h4>
+            </div>
+            <p class="text-white text-lg font-medium pl-2">
+                Optimizing <strong>WebSockets</strong> and <strong>Backend Scalability</strong> for high-load applications.
+            </p>
+        </div>
+
+        {/* === 2. WHY: The Rationale === */}
+        <div class="pl-8 pt-4 border-l border-dashed border-gray-600">
+            <h5 class="text-xl font-semibold text-white mb-2">The Rationale (Why I'm Learning This)</h5>
+            <p class="text-gray-400">
+                I encountered specific challenges in <strong>IdeaBoard</strong> maintaining high performance with concurrent users and ensuring seamless real-time data consistency, which necessitated a deep dive into robust architectural patterns.
+            </p>
+        </div>
+
+        {/* === 3. BUILDING: Application/Action === */}
+        <div class="pl-8 pt-4 border-l border-dashed border-gray-600">
+            <h5 class="text-xl font-semibold text-white mb-2">Application (What I'm Applying)</h5>
+            <p class="text-gray-400 italic bg-gray-950 p-3 rounded">
+                Actively refining IdeaBoard's backend architecture to handle increased load and improve data synchronization for live drawing data, while exploring strategies for <strong>robust error handling and resilience</strong> in a real-time environment.
+            </p>
+        </div>
+    </div>
+</section>

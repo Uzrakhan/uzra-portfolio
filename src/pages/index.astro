@@ -4,12 +4,22 @@ import Hero from "@components/Hero.astro";
 import Layout from "@layouts/Layout.astro";
 import Projects from "@components/Projects.astro";
 import About from "@components/About.astro";
-
+import Thinking from "@components/Thinking.astro";
+import LearningLog from "@components/LearningLog.astro"
 import "../styles/global.css";
 ---
 
 <Layout title="Uzrakhan's Developer Portfolio">
   <Hero {...SITE_CONTENT.hero} />
+
+  <hr class="mx-auto w-3/4 border-gray-800" />
+
   <Projects projects={SITE_CONTENT.projects} />
   <About {...SITE_CONTENT.about} name={SITE_CONTENT.hero.name} />
+
+  <hr class="mx-auto w-3/4 border-gray-800" />
+
+  <Thinking />
+  <hr class="mx-auto w-3/4 border-gray-800" />
+  <LearningLog />
 </Layout>
