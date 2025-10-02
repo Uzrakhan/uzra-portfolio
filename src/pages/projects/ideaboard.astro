@@ -23,8 +23,10 @@ const TECH_STACK = [
       </p>
 
       <div class="flex justify-center space-x-6 mt-4 text-lg font-medium">
-          <a href="YOUR_DEMO_LINK" target="_blank" class="text-primary hover:underline dark:text-accent">View Live Demo</a>
-          <a href="YOUR_REPO_LINK" target="_blank" class="text-primary hover:underline dark:text-accent">GitHub Repository</a>
+            <a href="https://tomato-food-app-two.vercel.app/" target="_blank" class="text-white bg-primary hover:bg-primary/90 rounded-lg px-6 py-2 transition-colors duration-300 shadow-md">
+                View Live Demo
+            </a>
+          <a href="https://github.com/Uzrakhan/IdeaBoard" target="_blank" class="text-primary hover:underline dark:text-accent">GitHub Repository</a>
       </div>
     </header>
 
@@ -48,7 +50,18 @@ const TECH_STACK = [
             This project addresses the challenge of remote collaboration by providing a real-time, shared digital space for users to brainstorm and draw simultaneously.
         </blockquote>
 
-        <hr class="my-8 border-gray-300 dark:border-gray-700" />
+        {/*Core features for quick scan*/}
+        <h2 class="text-3xl font-bold border-b pb-2 mt-12 mb-6 text-primary dark:text-accent">
+            Core Features
+        </h2>
+        <ul class="list-disc pl-6 space-y-2 bg-gray-50 dark:bg-gray-800 p-5 rounded-lg shadow-inner">
+            <li><strong>Real-Time Synchronization:</strong> Instantaneous propagation of all drawing actions (strokes, erasures) to all connected users via WebSockets.</li>
+            <li><strong>Scalable Canvas State:</strong> Efficient backend handling of concurrent connections and persistence of canvas data in MongoDB.</li>
+            <li><strong>Intuitive Toolset:</strong> Includes drawing, shape creation, and color selection for an enhanced user experience.</li>
+            <li><strong>Robust Error Handling:</strong> Implemented automated backend tests to ensure the reliability and stability of the core real-time API.</li>
+        </ul>
+
+        <hr class="my-10 border-gray-300 dark:border-gray-700" />
 
         <h2 class="text-2xl font-bold mb-4">How I Approached Problem-Solving:</h2>
         <p>Initially, I explored different real-time communication protocols and settled on <strong>WebSockets</strong> for their low-latency, bidirectional capabilities essential for instant drawing updates. For managing user interactions and drawing states, a robust frontend architecture was critical, leading me to use <strong>React</strong>.</p>
@@ -60,25 +73,25 @@ const TECH_STACK = [
         <h2 class="font-bold text-2xl mb-4">Tech Stack & Decision Rationale</h2>
         
         <table class="w-full text-left border-collapse border-b border-gray-300 dark:border-gray-700">
-            <thead class="bg-gray-100 dark:bg-gray-800 border-t border-gray-300 dark:border-gray-700">
-                <tr class="bg-gray-100 dark:bg-gray-800 border-t border-gray-300 dark:border-gray-700">
-                    <th class="p-3 text-gray-900 dark:text-white font-bold w-1/4">Technology</th>
-                    <th class="p-3 text-gray-900 dark:text-white font-bold">Rationale (Decision Behind Each Tech Choice)</th>
+            <thead class="bg-gray-800 dark:bg-gray-700 text-white">
+                <tr>
+                    <th class="p-4 font-extrabold w-1/4">Technology</th>
+                    <th class="p-4 font-extrabold">Rationale (Decision Behind Each Tech Choice)</th>
                 </tr>
             </thead>
             <tbody>
-                <tr class="border-t dark:border-gray-700"><td class="p-3 font-semibold">TypeScript</td><td class="p-3">Chosen for <strong>type-safety</strong>, crucial for developing complex, interactive UI components and ensuring data consistency across the real-time application. This reduced common runtime errors compared to plain JavaScript.</td></tr>
-                <tr class="border-t dark:border-gray-700"><td class="p-3 font-semibold">React</td><td class="p-3">Selected for its <strong>component-based architecture</strong>, which facilitated the creation of reusable UI elements (e.g., drawing tools, canvas) and efficient state management for a dynamic interface, offering better control over rendering performance.</td></tr>
-                <tr class="border-t dark:border-gray-700"><td class="p-3 font-semibold">Tailwind CSS</td><td class="p-3">Utilized for <strong>rapid UI development</strong> and responsive design. Its utility-first approach allowed for quick styling iterations and ensured the whiteboard adapted seamlessly across different screen sizes.</td></tr>
-                <tr class="border-t dark:border-gray-700"><td class="p-3 font-semibold">Socket.io</td><td class="p-3">Implemented specifically for <strong>real-time bidirectional communication</strong>. It provided robust features like room management and auto-reconnection, vital for enabling instant drawing updates and managing user permissions in a complex real-time environment.</td></tr>
-                <tr class="border-t dark:border-gray-700"><td class="p-3 font-semibold">Node.js & Express</td><td class="p-3">Chosen for the backend due to their <strong>non-blocking I/O model</strong>, making them highly efficient for handling numerous concurrent WebSocket connections. This was ideal for a real-time application needing scalable and performant server management.</td></tr>
-                <tr class="border-t dark:border-gray-700"><td class="p-3 font-semibold">MongoDB</td><td class="p-3">Integrated as the database solution for its <strong>flexibility and scalability</strong>, particularly suited for handling the dynamic and potentially unstructured nature of drawing data and user session information, allowing for quick schema evolution.</td></tr>
+                <tr class="border-t dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"><td class="p-3 font-semibold bg-gray-100 dark:bg-gray-900">TypeScript</td><td class="p-3">Chosen for <strong>type-safety</strong>, crucial for developing complex, interactive UI components and ensuring data consistency across the real-time application. This reduced common runtime errors compared to plain JavaScript.</td></tr>
+                <tr class="border-t dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"><td class="p-3 font-semibold bg-gray-100 dark:bg-gray-900">React</td><td class="p-3">Selected for its <strong>component-based architecture</strong>, which facilitated the creation of reusable UI elements (e.g., drawing tools, canvas) and efficient state management for a dynamic interface, offering better control over rendering performance.</td></tr>
+                <tr class="border-t dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"><td class="p-3 font-semibold bg-gray-100 dark:bg-gray-900">Tailwind CSS</td><td class="p-3">Utilized for <strong>rapid UI development</strong> and responsive design. Its utility-first approach allowed for quick styling iterations and ensured the whiteboard adapted seamlessly across different screen sizes.</td></tr>
+                <tr class="border-t dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"><td class="p-3 font-semibold bg-gray-100 dark:bg-gray-900">Socket.io</td><td class="p-3">Implemented specifically for <strong>real-time bidirectional communication</strong>. It provided robust features like room management and auto-reconnection, vital for enabling instant drawing updates and managing user permissions in a complex real-time environment.</td></tr>
+                <tr class="border-t dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"><td class="p-3 font-semibold bg-gray-100 dark:bg-gray-900">Node.js & Express</td><td class="p-3">Chosen for the backend due to their <strong>non-blocking I/O model</strong>, making them highly efficient for handling numerous concurrent WebSocket connections. This was ideal for a real-time application needing scalable and performant server management.</td></tr>
+                <tr class="border-t dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"><td class="p-3 font-semibold bg-gray-100 dark:bg-gray-900">MongoDB</td><td class="p-3">Integrated as the database solution for its <strong>flexibility and scalability</strong>, particularly suited for handling the dynamic and potentially unstructured nature of drawing data and user session information, allowing for quick schema evolution.</td></tr>
             </tbody>
         </table>
 
-        <hr class="my-8 border-gray-300 dark:border-gray-700" />
+        <hr class="my-10 border-gray-300 dark:border-gray-700" />
 
-        <h2 class="font-bold text-2xl mb-4">Outcome & Key Takeaways</h2>
+        <h2 class="font-bold text-3xl border-b mb-6 pb-2 text-primary dark:text-accent">Outcome & Key Takeaways</h2>
         <ul class="list-disc pl-6 space-y-2">
             <li>Successfully delivered a <strong>fully functional MVP</strong> (Minimum Viable Product) capable of real-time drawing and synchronization.</li>
             <li>Learned advanced concepts in <strong>WebSocket communication</strong> and state management in real-time applications.</li>

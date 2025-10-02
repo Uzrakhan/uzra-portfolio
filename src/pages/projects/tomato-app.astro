@@ -1,0 +1,102 @@
+---
+// Import the Layout component
+import Layout from '../../layouts/Layout.astro';
+import '../../styles/global.css'; 
+---
+
+<Layout title="Tomato App: Food Ordering Platform" fullWidth={true} isStickyHeader={false}>
+  {/* Main project container with rounded borders and shadow */}
+  <article class="mx-auto py-12 mb-5 dark:bg-gray-900 rounded-xl border border-gray-700 shadow-xl max-w-5xl">
+    
+    {/* Header Section */}
+    <header class="mb-12 text-center border-b pb-8 border-gray-200 dark:border-gray-700">
+      <h1 class="text-5xl font-extrabold text-gray-900 dark:text-white mb-4 font-serif">
+        Tomato Food App: Seamless Ordering Platform
+      </h1>
+
+      <p class="text-xl text-gray-600 dark:text-gray-400 italic mx-auto max-w-3xl px-8">
+        A full-stack replication of a modern food ordering system, featuring secure Firebase authentication and dynamic restaurant discovery.
+      </p>
+
+      <div class="flex justify-center space-x-6 mt-6 text-lg font-medium">
+          <a href="https://tomato-food-app-two.vercel.app/" target="_blank" class="text-white bg-primary hover:bg-primary/90 rounded-lg px-6 py-2 transition-colors duration-300 shadow-md">
+                View Live Demo
+          </a>
+          <a href="https://github.com/Uzrakhan/Tomato-food-app" target="_blank" class="text-gray-700 dark:text-gray-200 border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg px-6 py-2 transition-colors duration-300 shadow-md">
+                GitHub Repository
+          </a>
+      </div>
+    </header>
+
+    {/* Video Demo Section */}
+    <div class="my-10 shadow-2xl overflow-hidden px-8">
+        <iframe 
+            class="w-full aspect-video rounded-xl border border-gray-300 dark:border-gray-700"
+            src="YOUR_EMBED_URL" 
+            title="Tomato App Video Demo: Login, Browse, Filter" 
+            allowfullscreen
+        ></iframe>
+        
+        {/* Testimonial/Feedback */}
+        <p class="text-center italic text-gray-500 dark:text-gray-400 mt-4">
+            "[Optional: 'The filtering is so smooth!' - Friend/Tester]"
+        </p>
+    </div>
+
+    <div class="prose dark:prose-invert max-w-none mx-auto text-gray-800 dark:text-gray-200 px-8">
+        
+        <h2 class="text-3xl font-bold border-b pb-2 mb-6 text-primary dark:text-accent">
+            The Core Challenge
+        </h2>
+
+        <blockquote class="text-xl italic border-l-4 border-primary/70 pl-4 bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+            The primary challenge was implementing a <strong>secure and efficient authentication system</strong> alongside providing a streamlined, <strong>personalized restaurant discovery experience</strong> for every user.
+        </blockquote>
+
+        {/* Feature Focus Section */}
+        <h2 class="text-3xl font-bold border-b pb-2 mt-12 mb-6 text-primary dark:text-accent">
+            Key Development Features
+        </h2>
+        <ul class="list-disc pl-6 space-y-2 bg-gray-50 dark:bg-gray-800 p-5 rounded-lg shadow-inner">
+            <li><strong>Secure Authentication:</strong> Integrated Firebase for fast, multi-method user login (Email/Password, Google Sign-in).</li>
+            <li><strong>Route Protection:</strong> Implemented robust session management and protected user-specific routes, ensuring data privacy and security.</li>
+            <li><strong>Dynamic Filtering:</strong> Developed a client-side system for dynamic restaurant filtering based on user-defined criteria, crucial for enhancing user experience.</li>
+            <li><strong>Personalized UX:</strong> Ensured session persistence and personalized the dining experience based on the authenticated user.</li>
+        </ul>
+
+        <hr class="my-10 border-gray-300 dark:border-gray-700" />
+
+        <h2 class="text-3xl font-bold border-b pb-2 mb-6 text-primary dark:text-accent">How I Approached Problem-Solving</h2>
+        <p>The central challenge of secure and rapid user authentication was solved by leveraging <strong>Firebase Authentication</strong>. This allowed for quick integration of reliable sign-in options, reducing custom backend setup time significantly.</p>
+        <p class="mt-2">To enhance the user experience, I focused heavily on <strong>data presentation</strong>. Dynamic filtering was implemented to allow users to instantly discover restaurants based on criteria, using React's efficient state management to handle complex UI logic without impacting performance.</p>
+
+        <hr class="my-10 border-gray-300 dark:border-gray-700" />
+                
+        <h2 class="text-3xl font-bold border-b pb-2 mb-6 text-primary dark:text-accent">Tech Stack & Decision Rationale</h2>
+        
+        <table class="w-full text-left border-collapse rounded-xl overflow-hidden shadow-lg">
+            <thead class="bg-gray-800 dark:bg-gray-700 text-white">
+                <tr>
+                    <th class="p-4 font-extrabold w-1/4">Technology</th>
+                    <th class="p-4 font-extrabold">Rationale (Decision Behind Each Tech Choice)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="border-t dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"><td class="p-3 font-semibold bg-gray-100 dark:bg-gray-900">React</td><td class="p-3">Chosen for its efficiency in building <strong>dynamic user interfaces</strong>, particularly for rendering lists of restaurants and managing complex UI states related to filtering and authentication flows. Its component reusability sped up development.</td></tr>
+                <tr class="border-t dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"><td class="p-3 font-semibold bg-gray-100 dark:bg-gray-900">Firebase</td><td class="p-3">Selected as the <strong>backend-as-a-service (BaaS)</strong> for its rapid authentication capabilities and real-time database (Firestore), which simplified user management and data storage, significantly reducing custom backend setup time.</td></tr>
+                <tr class="border-t dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"><td class="p-3 font-semibold bg-gray-100 dark:bg-gray-900">Tailwind CSS</td><td class="p-3">Used for its <strong>utility-first approach</strong> to quickly style responsive components like restaurant cards and navigation, ensuring a consistent and adaptive design across devices without writing much custom CSS.</td></tr>
+            </tbody>
+        </table>
+
+        <hr class="my-10 border-gray-300 dark:border-gray-700" />
+
+        <h2 class="text-3xl font-bold border-b pb-2 mb-6 text-primary dark:text-accent">Outcome & Key Takeaways</h2>
+        <ul class="list-disc pl-6 space-y-2">
+            <li>Successfully implemented a <strong>robust Firebase Authentication system</strong>, reducing authentication development time by an estimated 30%.</li>
+            <li>Gained hands-on experience with <strong>secure route protection</strong> and user session persistence.</li>
+            <li>Developed <strong>dynamic data filtering capabilities</strong>, significantly improving the user's ability to navigate and find desired content efficiently.</li>
+        </ul>
+
+    </div>
+  </article>
+</Layout>

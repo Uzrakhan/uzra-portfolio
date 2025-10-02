@@ -39,7 +39,7 @@ export const SITE_CONTENT: SiteContent = {
     {
       name: "Tomato Food App",
       summary: "A clone of the food ordering app Zomato",
-      linkPreview: "https://tomato-food-app-two.vercel.app/",
+      linkPreview: "/projects/tomato-app",
       linkSource: "https://github.com/Uzrakhan/Tomato-food-app",
       image: "/shopify-clon.png",
     },
