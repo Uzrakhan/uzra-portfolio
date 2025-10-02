@@ -36,7 +36,7 @@ const { projects } = Astro.props;
                   href={linkSource}
                   target="_blank"
                   class="after:relative after:bottom-[-5px] after:content-[url(/external.svg)] hover:underline"
-                  onclick="event.stopPropagation();"
+                  onclick={(e) => e.stopPropagation()}
                 >
                   Source
                 </a>

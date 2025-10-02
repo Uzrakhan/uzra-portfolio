@@ -2,7 +2,6 @@
 import Menu from "@icons/Menu.astro";
 import { Image } from "astro:assets";
 
-type Props = HeaderProps;
 
 interface Props {
   siteLogo: { text: string; link: string };
@@ -53,13 +52,13 @@ const headerClasses = [
   >
     <ul class="gap-2 sm:flex">
       {
-        navLinks.map((link) => (
+        navLinks.map((link : { name: string, href: string }) => (
           <li class="relative">
             <a
               class={`nav-item relative block p-2 text-sm font-medium transition-all duration-500 after:absolute after:bottom-0 after:left-2/4 after:h-2 after:w-1 after:-translate-x-2/4 after:text-primary after:opacity-0 after:content-['•'] hover:text-white`}
               href={link.href}
             >
-              {link.text}
+              {link.name}
             </a>
           </li>
         ))
