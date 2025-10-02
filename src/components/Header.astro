@@ -4,8 +4,8 @@ import { Image } from "astro:assets";
 
 
 interface Props {
-  siteLogo: { text: string; link: string };
-  navLinks: { name: string; href: string }[];
+  siteLogo: string;
+  navLinks: { text: string; href: string }[];
   isStickyHeader: boolean; // Accept the new prop
 }
 
@@ -52,13 +52,13 @@ const headerClasses = [
   >
     <ul class="gap-2 sm:flex">
       {
-        navLinks.map((link : { name: string, href: string }) => (
+        navLinks.map((link : { text: string, href: string }) => (
           <li class="relative">
             <a
               class={`nav-item relative block p-2 text-sm font-medium transition-all duration-500 after:absolute after:bottom-0 after:left-2/4 after:h-2 after:w-1 after:-translate-x-2/4 after:text-primary after:opacity-0 after:content-['•'] hover:text-white`}
               href={link.href}
             >
-              {link.name}
+              {link.text}
             </a>
           </li>
         ))
